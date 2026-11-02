@@ -1,17 +1,27 @@
-frågor=["tom", "Vilken huvudstad har Sverige?"]
-svar=["tom", "Oslo", "Stockholm", "Köpenhamn"]
+import random as rand
+
+frågor=["tom", "Vilken huvudstad har Sverige?", "Vilken huvudstad har Norge?", "Vilket år började andra världskriget?"]
+oanvändaFrågor=list(range(len(frågor+1)))
+oanvändaFrågor.pop(0)
+random.shuffle(oanvändaFrågor)
+svar=["tom", "Oslo", "Stockholm", "Köpenhamn", "Oslo, "Bergen", "Trondheim", "1914", "1939", "1945"]
 korrekt=[0, 2]
 
-import random as rand
-frågaIdx=rand.randint(1,len(frågor)-1)
-svarIdx=frågaIdx*3
+poäng=0
+ggr=int(input("Antal frågor: "))
 
-print(frågor[idx])
-print(f"1. svar[svarIdx-2]")
-print(f"2. svar[svarIdx-1]")
-print(f"3. svar[svarIdx]")
-val=int(input("Ditt val: "))
-if val=korrekt[frågaIdx]:
-  print("Rätt")
-else:
-  print("Fel.")
+for k in range(ggr):
+  for i in oanvändaFrågor:
+    frågaIdx=i
+    svarIdx=frågaIdx*3
+    print(frågor[idx])
+    print(f"1. svar[svarIdx-2]")
+    print(f"2. svar[svarIdx-1]")
+    print(f"3. svar[svarIdx]")
+    val=int(input("Ditt val: "))
+    if val=korrekt[frågaIdx]:
+      print("Rätt")
+      poäng+=1
+    else:
+      print(f"Fel, rätt svar var: {svar[svarIdx-3+korrekt[frågaIdx]]}")
+print(f"Du fick {poäng} av {ggr} rätt.")
