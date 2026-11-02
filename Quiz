@@ -1,0 +1,17 @@
+frågor=["tom", "Vilken huvudstad har Sverige?"]
+svar=["tom", "Oslo", "Stockholm", "Köpenhamn"]
+korrekt=[0, 2]
+
+import random as rand
+frågaIdx=rand.randint(1,len(frågor)-1)
+svarIdx=frågaIdx*3
+
+print(frågor[idx])
+print(f"1. svar[svarIdx-2]")
+print(f"2. svar[svarIdx-1]")
+print(f"3. svar[svarIdx]")
+val=int(input("Ditt val: "))
+if val=korrekt[frågaIdx]:
+  print("Rätt")
+else:
+  print("Fel.")
